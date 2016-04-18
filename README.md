@@ -1,8 +1,6 @@
 # Xcvm
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/xcvm`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Xcode Version Manager is a command line utility and ruby gem for manipulating Xcode project versions in many different ways. It allows for expressive commands to bump build numbers and increment versions using semantic versioning conventions.
 
 ## Installation
 
@@ -22,7 +20,43 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To increment a build number, from within the directory containing the `Info.plist` file for your project, simply run:
+
+```bash
+xcvm bump build
+```
+
+If you'd like to print the current build number, simply type:
+
+```bash
+xcvm print build
+```
+
+You can also print the current version:
+
+```bash
+xcvm print version
+```
+
+Or increment/decrement a segment of the version by using:
+
+```bash
+xcvm increment major
+```
+
+or
+
+```bash
+xcvm decrement revision
+```
+
+Version numbers are interpreted as `major.minor.revision`.
+
+You can also specify the path to your `Info.plist` file manually:
+
+```
+xcvm bump minor -p ~/Project/Info.plist
+```
 
 ## Development
 
