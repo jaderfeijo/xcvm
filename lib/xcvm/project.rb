@@ -18,11 +18,19 @@ module Xcvm
 			return @version
 		end
 
+		def version=(value)
+			@version = value
+		end
+
 		def build
 			if @build == nil then
 				@build = Xcvm::Build.new(info['CFBundleVersion'].to_i)
 			end
 			return @build
+		end
+
+		def build=(value)
+			@build = value
 		end
 		
 		def save
