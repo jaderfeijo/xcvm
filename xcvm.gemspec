@@ -14,9 +14,9 @@ Gem::Specification.new do |spec|
   spec.description   = "A version manager for Xcode projects"
   spec.homepage      = "https://github.com/jaderfeijo/xcvm"
 
-  spec.files         = Dir['lib/*.rb', 'lib/xcvm/*.rb']
+  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.executables   = ["xcvm"]
-  spec.require_path  = 'lib'
+  spec.require_path  = ["lib"]
 
   spec.required_ruby_version = '~> 2.2'
 
