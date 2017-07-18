@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'xcvm'
+
+if ARGV[0] == 'print' then
+  Xcvm::VersionManager::run 'print', 'build', nil, ARGV[1]
+elsif ARGV[0] == 'set' then
+  Xcvm::VersionManager::run 'set', 'build', ARGV[1], ARGV[2]
+elsif ARGV[0] == 'bump' || ARGV[0] == 'increment' || ARGV[0] == 'decrement' then
+  Xcvm::VersionManager::run ARGV[0], 'build', nil, ARGV[1]
+else
+  raise "Unknown action '#{ARGV[0]}'"
+end

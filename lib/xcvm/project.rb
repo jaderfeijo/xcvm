@@ -41,6 +41,7 @@ module Xcvm
 
 		private
 		def info
+      raise "File not found '#{@file}'" unless File.exists?(@file)
 			if @info == nil then
 				@info = Plist::parse_xml(@file)
 			end
