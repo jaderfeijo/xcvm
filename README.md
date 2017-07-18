@@ -58,6 +58,39 @@ You can also specify the path to your `Info.plist` file manually:
 xcvm bump minor -p ~/Project/Info.plist
 ```
 
+Alternatively you can use the more compact forms `version` and `build` as well. So you can do things like:
+
+```
+version print
+```
+
+or
+
+```
+build print
+```
+
+Or even
+
+```
+build bump
+```
+```
+build increment
+```
+
+or
+
+```
+version increment major
+```
+```
+version increment minor
+```
+```
+version increment revision
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
